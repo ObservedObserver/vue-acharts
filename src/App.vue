@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <A-Charts :options="options" />
+    <A-Charts :options="options" />
+    <A-Charts :options="options" />
     <button type="button" name="button" @click="createData">Change</button>
   </div>
 </template>
@@ -12,7 +14,6 @@ export default {
   data () {
     return {
       option: {
-        id: 'acharts',
         width: 950,
         height: 500,
         plotCfg: {
@@ -41,28 +42,23 @@ export default {
         series: [{
           name: 'Tokyo',
           data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        },
+        {
+          name: 'Shanghai',
+          data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
         }]
       }
     }
   },
   mounted () {
-    // setInterval(() => {
-    //   this.option.series[0].data = this.option.series[0].data.map((val) => {
-    //     return parseInt(20 * Math.random())
-    //   })
-    //   console.log(this.options.series[0].data)
-    //   // console.log(this.option.series[0].data)
-    // }, 3000)
   },
   methods: {
     createData () {
-      this.option.series = [{
-        name: 'Tokyo',
-        data: []
-      }]
-      for (let i = 0; i < 12; i++) {
-        this.option.series[0].data.push(parseInt(Math.random() * 20))
-      }
+      this.option.series = this.option.series.map((val) => {
+        // val.name = ""
+        val.data = val.data.map(val => parseInt(Math.random() * 20))
+        return val
+      })
     }
   },
   computed: {
