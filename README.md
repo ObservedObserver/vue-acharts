@@ -107,6 +107,7 @@ vue-acharts组件会帮助你监控option中数据的变化，并根据变化进
 
 ### Methods
 + init
++ setTheme(themeConfig)
 
 ### 注意事项
 vue-acharts会自动设定dom的id，格式为`acharts-${integer}`。这使得在使用的时候无需传入id配置项，vue-acharts会自动帮你设置各个图表的id。

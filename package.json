@@ -12,8 +12,6 @@
   },
   "dependencies": {
     "acharts": "^1.0.34",
-    "async": "^2.6.0",
-    "form-data": "^2.3.2",
     "vue": "^2.5.2"
   },
   "devDependencies": {
