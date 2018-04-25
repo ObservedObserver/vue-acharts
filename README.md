@@ -4,14 +4,32 @@
 
 使用[vue2.5.2+](https://cn.vuejs.org/)与[acharts1.0.15+](https://github.com/acharts/acharts)构建
 
-## 使用
+## 安装
+推荐使用npm进行安装
+```bash
+npm i vue-acharts
+```
+
+或者直接下载并引入`/dist/vue-acharts.js`
+```html
+<script src="/path/vue-acharts.js"></script>
+```
 在使用前，需在全局使用cdn等方式引入ACharts。这是由于目前尚未解决npm安装acharts出现的各种问题。
 ```html
  <script src="http://g.tbcdn.cn/bui/acharts/1.0.15/acharts-min.js"></script>
 ```
 vue-acharts组件会从全局`window.AChart`来获取到ACharts。
 
-注册全局组件
+
+## 使用
+
+```js
+var AChart = require('vue-acharts')
+// or
+import AChart = require('vue-acharts')
+```
+
+可以注册全局组件
 ```js
 import Vue from 'vue'
 import ACharts from 'vue-acharts/components/ACharts'

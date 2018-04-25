@@ -54,12 +54,12 @@ export default {
       // this.theme = Theme[this.chartId]
       Theme.ch = Theme.initTheme(Theme.Base, theme)
       this.theme = Theme.ch
-      console.log('props', this.$props)
       if (typeof this.$props.options !== 'undefined') {
+        this.chart.clear()
+        this.chart = null
         this.init()
         this.chart.render()
       }
-      // this.chart.render()
     }
   },
   beforeCreate () {

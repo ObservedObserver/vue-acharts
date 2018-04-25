@@ -12,9 +12,9 @@
 
 <script>
 // import ACharts from '@/components/ACharts.vue'
-import BarChart from '@/demo/BarChart.vue'
-import LineChart from '@/demo/LineChart.vue'
-import PieChart from '@/demo/PieChart.vue'
+import BarChart from './components/BarChart.vue'
+import LineChart from './components/LineChart.vue'
+import PieChart from './components/PieChart.vue'
 export default {
   name: 'App',
   data () {

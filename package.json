@@ -1,9 +1,9 @@
 {
   "name": "vue-acharts",
-  "version": "1.0.0",
+  "version": "0.1.3",
   "description": "A Vue.js project",
-  "author": "Observed Observer <MasterHaoChen@icloud.com>",
-  "private": true,
+  "author": "Observed Observer <270001151@qq.com>",
+  "private": false,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -40,6 +40,8 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-minify": "^2.1.0",
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
@@ -49,6 +51,12 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+    "rollup": "^0.58.2",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-vue": "^3.0.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
@@ -69,5 +77,19 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "./dist/vue-acharts.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ObservedObserver/vue-acharts.git"
+  },
+  "keywords": [
+    "acharts",
+    "vue"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ObservedObserver/vue-acharts/issues"
+  },
+  "homepage": "https://github.com/ObservedObserver/vue-acharts#readme"
 }
