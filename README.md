@@ -26,7 +26,7 @@ vue-acharts组件会从全局`window.AChart`来获取到ACharts。
 ```js
 var AChart = require('vue-acharts')
 // or
-import AChart = require('vue-acharts')
+import ACharts from 'vue-acharts'
 ```
 
 可以注册全局组件
