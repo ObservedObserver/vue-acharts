@@ -1,6 +1,8 @@
 # vue-acharts
 
-> 基于vue的acharts图标组件
+> 基于vue的acharts图表组件
+
+使用vue2.5.2+(https://cn.vuejs.org/)与[acharts1.0.15+](https://github.com/acharts/acharts)构建
 
 ## 使用
 在使用前，需现在全局倒入ACharts。这是由于目前尚未解决npm安装acharts出现的各种问题。
@@ -107,8 +109,50 @@ vue-acharts组件会帮助你监控option中数据的变化，并根据变化进
 + init
 
 ### 注意事项
-vue-echarts会自定义dom的id，格式为`acharts-${integer}`，注意在使用时规避id命名冲突。
+vue-acharts会自动设定dom的id，格式为`acharts-${integer}`。这使得在使用的时候无需传入id配置项，vue-acharts会自动帮你设置各个图表的id。
 
+### 事件
++ 图表支持的事件类型：
+
+  + plotclick 图表边框内部的点击事件
+    + ev.x 点击的x坐标
+    + ev.y 点击的y坐标
+    + ev.shape 点击的图形
+  + plotmove 图表边框内部的移动事件
+    + ev.x 移动到的x坐标
+    + ev.y 移动到的y坐标
+    + ev.shape 移动到的图形
+  + plotover 进入图表的边框内部
+    + ev.x 进入的x坐标
+    + ev.y 进入的y坐标
+    + ev.shape 移动到的图形
+  + plotout 移出图表边框
+  + seriesactived 图表序列激活，例如折线图激活
+    + ev.series 图表序列
+  + seriesunactived 图表序列取消激活
+    + ev.series 图表序列
+  + seriesitemclick 点击图表序列子项，例如饼图的一个子项（弧形）被点击
+    + ev.series 图表序列
+    + ev.seriesItem 图表序列子项
+  + seriesitemselected 选中图表序列的一个子项，例如柱状图的一项被选中
+    + ev.series 图表序列
+    + ev.seriesItem 图表序列子项
+  + seriesitemunselected 取消选中图表序列的一个子项
+    + ev.series 图表序列
+    + ev.seriesItem 图表序列子项
+  + tooltipshow 提示信息显示
+  + tooltiphide 提示信息隐藏
+
+使用代码
+```js
+<A-Chart :options="options" @plotclick="yourAction">
+...
+methods: {
+  yourAction (ev) {
+    console.log(ev.x, ev.y, ev.shape)
+  }
+}
+```
 ### 本地开发测试
 ```bash
 npm i

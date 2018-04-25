@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <A-Charts :options="options" />
+    <A-Charts :options="options" @plotclick="testPlotClick"/>
     <A-Charts :options="options" />
     <A-Charts :options="options" />
     <button type="button" name="button" @click="createData">Change</button>
@@ -59,6 +59,9 @@ export default {
         val.data = val.data.map(val => parseInt(Math.random() * 20))
         return val
       })
+    },
+    testPlotClick (ev) {
+      console.log(ev.x, ev.y, ev.shape)
     }
   },
   computed: {

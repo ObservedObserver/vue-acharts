@@ -6,6 +6,19 @@
 var cid = 0
 // import AChart from 'acharts'
 var AChart = window.AChart
+const events = [
+  'plotclick',
+  'plotmove',
+  'plotover',
+  'plotout',
+  'seriesactived',
+  'seriesunactived',
+  'seriesitemclick',
+  'seriesitemselected',
+  'seriesitemunselected',
+  'tooltipshow',
+  'tooltiphide'
+]
 export default {
   name: 'a-charts',
   props: {
@@ -25,6 +38,12 @@ export default {
       this.chartId = 'achart-' + (cid++)
       op.id = this.chartId
       this.chart = new AChart(this.$props.options)
+
+      events.forEach((ev) => {
+        this.chart.on(ev, (params) => {
+          this.$emit(ev, params)
+        })
+      })
     }
   },
   beforeCreate () {
