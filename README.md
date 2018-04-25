@@ -2,10 +2,10 @@
 
 > 基于vue的acharts图表组件
 
-使用vue2.5.2+(https://cn.vuejs.org/)与[acharts1.0.15+](https://github.com/acharts/acharts)构建
+使用[vue2.5.2+](https://cn.vuejs.org/)与[acharts1.0.15+](https://github.com/acharts/acharts)构建
 
 ## 使用
-在使用前，需现在全局倒入ACharts。这是由于目前尚未解决npm安装acharts出现的各种问题。
+在使用前，需在全局使用cdn等方式引入ACharts。这是由于目前尚未解决npm安装acharts出现的各种问题。
 ```html
  <script src="http://g.tbcdn.cn/bui/acharts/1.0.15/acharts-min.js"></script>
 ```

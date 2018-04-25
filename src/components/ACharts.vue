@@ -29,21 +29,37 @@ export default {
   data () {
     return {
       chart: null,
-      chartId: 'achart'
+      chartId: 'achart',
+      theme: null
     }
   },
   methods: {
     init () {
       let op = this.$props.options
-      this.chartId = 'achart-' + (cid++)
       op.id = this.chartId
-      this.chart = new AChart(this.$props.options)
+      if (this.theme) {
+        op.theme = this.theme
+      }
+      this.chart = new AChart(op)
 
       events.forEach((ev) => {
         this.chart.on(ev, (params) => {
           this.$emit(ev, params)
         })
       })
+    },
+    setTheme (theme) {
+      let Theme = AChart.Theme
+      // Theme[this.chartId] = Theme.initTheme(Theme.Base, theme)
+      // this.theme = Theme[this.chartId]
+      Theme.ch = Theme.initTheme(Theme.Base, theme)
+      this.theme = Theme.ch
+      console.log('props', this.$props)
+      if (typeof this.$props.options !== 'undefined') {
+        this.init()
+        this.chart.render()
+      }
+      // this.chart.render()
     }
   },
   beforeCreate () {
@@ -51,6 +67,7 @@ export default {
     // this.chartId = 'achart'
   },
   created () {
+    this.chartId = 'achart-' + (cid++)
     if (typeof this.$props.options !== 'undefined') {
       this.init()
     }
